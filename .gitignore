@@ -55,7 +55,7 @@ jspm_packages
 typings/
 
 # build folders
-**/build/**
+#**/build/**
 
 # ignores DS_Store
 .DS_Store
