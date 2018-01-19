@@ -22,11 +22,15 @@ app.use(bodyParser.urlencoded({
 app.use(router)
 
 // start mongo connection pool, then start express app
-mongo.connect(process.env.MONGODB_URL)
-    // .then(() => configMongoDB(app)) only is using config for special case at the top of project
-    .then(() => app.listen(port))
-    .then(() => console.log('go go go'))
-    .catch((err) => {
-        console.error(err)
-        process.exit(1)
-    })
+// mongo.connect(process.env.MONGODB_URL)
+//     // .then(() => configMongoDB(app)) only is using config for special case at the top of project
+//     .then(() => app.listen(port))
+//     .then(() => console.log('go go go'))
+//     .catch((err) => {
+//         console.error(err)
+//         process.exit(1)
+//     })
+
+//for heroku
+
+app.listen(port)
