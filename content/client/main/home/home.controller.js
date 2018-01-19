@@ -1,6 +1,6 @@
 (function () {
 
-    angular.module('client.home')
+    angular.module('client.main')
         .controller('homeController', HomeController)
 
     HomeController.$inject = []

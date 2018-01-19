@@ -1,17 +1,17 @@
-// const { MongoClient, ObjectId} = require('mongodb')
+const { MongoClient, ObjectId} = require('mongodb')
 
-// let _conn = null
+let _db = null
 
-// function connect(ur){
-//     if(_conn !== null){return Promise.resolve(_conn)}
+function connect(url){
+    if(_db !== null){return Promise.resolve(_db)}
 
-//     return MongoClient.connect(url)
-//     .then(conn => _conn = conn)
+    return MongoClient.connect(url)
+    .then(db => _db = db)
 
-// }
+}
 
-// module.exports = {
-//     connect,
-//     connection: {conn: () => _conn},
-//     ObjectId
-// }
+module.exports = {
+    connect,
+    connection: {db: () => _db},
+    ObjectId
+}

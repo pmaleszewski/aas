@@ -1,5 +1,7 @@
 const router = require('express').Router()
 const clientRoutes = require('./client.routes')
+const messageRoutes = require('./messages.routes')
+
 // const authenticate = require('../filters/authenticate')
 
 module.exports = router
@@ -14,11 +16,13 @@ module.exports = router
 
 
 
+// register client routes
+
+router.use('/api/messages', messageRoutes)
+router.use(clientRoutes)
+
 // API error handlers (API routes must be registered before this)
 useAPIErrorHandlers(router)
-
-// register client routes
-router.use(clientRoutes)
 
 
 function useAPIErrorHandlers(router) {

@@ -1,9 +1,9 @@
 (function (){
     'use strict'
 
-    angular.module('client.home', ['ui.router'])
+    angular.module('client.main', ['ui.router'])
 
-    angular.module('client.home').config(RouteConfig)
+    angular.module('client.main').config(RouteConfig)
 
     RouteConfig.$inject = ['$stateProvider']
 
@@ -13,17 +13,12 @@
             url: '/',
             views: {
                 'home': {
-                    templateUrl: 'client/home/home.html',
+                    templateUrl: 'client/main/home/home.html',
                     controller: 'homeController as hc'
                 }
             }
         })
     }
-
-
-
-
-
 
 
 
